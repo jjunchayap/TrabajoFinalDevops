@@ -1,179 +1,90 @@
-:root {
-    --primary: #2563eb;
-    --dark: #0f172a;
-    --light: #f8fafc;
-    --accent: #f43f5e;
-    --gray: #64748b;
-    --transition: all 0.3s ease;
-}
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body {
-    font-family: 'Inter', sans-serif;
-    background-color: var(--light);
-    color: var(--dark);
-    line-height: 1.6;
-}
-
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-/* Navbar */
-.navbar {
-    background: white;
-    padding: 20px 0;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-    position: sticky;
-    top: 0;
-    z-index: 1000;
-}
-
-.navbar .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.logo {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--primary);
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.nav-links {
-    display: flex;
-    list-style: none;
-    gap: 30px;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: var(--gray);
-    font-weight: 500;
-    transition: var(--transition);
-}
-
-.nav-links a:hover {
-    color: var(--primary);
-}
-
-.btn-login {
-    background: transparent;
-    border: 1px solid var(--primary);
-    color: var(--primary);
-    padding: 8px 20px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-weight: 600;
-}
-
-.btn-signup {
-    background: var(--primary);
-    color: white;
-    border: none;
-    padding: 9px 20px;
-    border-radius: 6px;
-    margin-left: 10px;
-    cursor: pointer;
-    font-weight: 600;
-}
-
-/* Hero Section */
-.hero {
-    padding: 100px 0;
-    background: radial-gradient(circle at top right, #e0e7ff, white);
+/* Estilos adicionales para Cursos */
+.courses-header {
     text-align: center;
+    padding: 60px 0 40px;
 }
 
-.badge {
-    background: #dbeafe;
-    color: var(--primary);
-    padding: 5px 15px;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: 700;
-    text-transform: uppercase;
-}
-
-.hero h1 {
-    font-size: 3.5rem;
-    margin: 20px 0;
-    color: var(--dark);
-    line-height: 1.1;
-}
-
-.hero p {
-    font-size: 1.2rem;
-    color: var(--gray);
-    max-width: 700px;
-    margin: 0 auto 40px;
-}
-
-.btn-primary {
-    background: var(--primary);
-    color: white;
-    padding: 15px 35px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 600;
-    display: inline-block;
-    transition: var(--transition);
-}
-
-.btn-primary:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 10px 20px rgba(37, 99, 235, 0.2);
-}
-
-/* Features */
-.features {
-    padding: 80px 0;
-}
-
-.section-title {
-    text-align: center;
-    margin-bottom: 50px;
-}
-
-.feature-grid {
+.course-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 25px;
+    padding-bottom: 100px;
 }
 
-.feature-card {
+.course-card {
     background: white;
-    padding: 40px;
+    border-radius: 15px;
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease;
+    border: 1px solid #edf2f7;
+}
+
+.course-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.course-icon {
+    width: 60px;
+    height: 60px;
     border-radius: 12px;
-    text-align: center;
-    transition: var(--transition);
-    border: 1px solid #f1f5f9;
-}
-
-.feature-card:hover {
-    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
-}
-
-.feature-card i {
-    font-size: 2.5rem;
-    color: var(--accent);
-    margin-bottom: 20px;
-}
-
-footer {
-    padding: 40px 0;
-    background: var(--dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
     color: white;
+    flex-shrink: 0;
+}
+
+/* Colores de Iconos */
+.math { background: #4c51bf; }
+.science { background: #38a169; }
+.lang { background: #e53e3e; }
+.coding { background: #2d3748; }
+.art { background: #d53f8c; }
+.history { background: #d69e2e; }
+
+.course-info h3 {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+    color: var(--dark);
+}
+
+.one-line {
+    font-size: 0.9rem;
+    color: var(--gray);
+    margin-bottom: 15px;
+    /* Esto fuerza una sola línea con puntos suspensivos si es muy larga */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 250px; 
+}
+
+.btn-sm {
+    background: #f1f5f9;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    cursor: pointer;
+    color: var(--primary);
+    transition: 0.2s;
+}
+
+.btn-sm:hover {
+    background: var(--primary);
+    color: white;
+}
+
+.simple-footer {
     text-align: center;
+    padding: 30px;
+    background: #fff;
+    border-top: 1px solid #eee;
 }

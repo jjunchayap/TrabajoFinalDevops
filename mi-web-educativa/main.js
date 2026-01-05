@@ -11,3 +11,8 @@ function saludo() {
 
 // Lógica para marcar lecciones como completadas (opcional)
 console.log("Sistema educativo cargado correctamente.");
+
+// Forzar redirección a HTTPS si el usuario entra por HTTP
+if (window.location.protocol === 'http:') {
+    window.location.href = window.location.href.replace('http:', 'https:');
+}
